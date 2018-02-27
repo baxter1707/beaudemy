@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "msb",
+    "password": null,
+    "database": "beaudemy_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "msb",
+    "password": null,
+    "database": "beaudemy_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "msb",
+    "password": null,
+    "database": "beaudemy_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
