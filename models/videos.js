@@ -1,32 +1,40 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var video = sequelize.define('video', {
+  var videos = sequelize.define('videos', {
     courseName: DataTypes.STRING,
     tag: DataTypes.STRING,
     courseDescription: DataTypes.STRING,
+    url: DataTypes.TEXT,
     id: {
       allowNull: false,
       primaryKey: true,
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4
     },
-    UserId: {
-        type: Sequelize.UUID,
+    teacherId: {
+        type: DataTypes.UUID,
         onDelete: 'CASCADE',
         references: {
           model: 'teachers',
           key: 'id'
         }
       },
+    studentid: {
+      type: DataTypes.TEXT
+    }
   }, {
     classMethods: {
       associate: function(models) {
-        video.belongsTo(models.teacher, {
-          foreignKey: 'UserId',
+        videos.hasMany(models.students, {
+         foreignKey: 'videoId',
+       onDelete: 'CASCADE'
+       });
+        videos.belongsTo(models.teachers, {
+          foreignKey: 'teacherId',
           onDelete: 'CASCADE'
         });
       }
     }
   });
-  return video;
+  return videos;
 };
