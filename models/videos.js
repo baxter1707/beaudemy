@@ -21,6 +21,9 @@ module.exports = (sequelize, DataTypes) => {
       },
     studentid: {
       type: DataTypes.TEXT
+    },
+    screenurl : {
+      type: DataTypes.TEXT
     }
   }, {
     classMethods: {

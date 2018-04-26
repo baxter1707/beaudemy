@@ -43,6 +43,9 @@ module.exports = {
           key: 'id'
         }
       }
+      screenurl: {
+        type: Sequelize.TEXT
+      }
 
     });
   },

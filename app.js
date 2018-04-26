@@ -72,7 +72,8 @@ app.post('/StudentSubscribe', (req,res) => {
     studentid:req.body.studentid,
     courseName: req.body.courseName,
     tag: req.body.tag,
-    courseDescription: req.body.courseDescription
+    courseDescription: req.body.courseDescription,
+    screenurl : req.body.screenurl
   })
 
   res.json({success : true})
